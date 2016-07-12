@@ -14,6 +14,10 @@ build = True
 def continuous_build():
     while build:
         subprocess.run(['node_modules/typescript/bin/tsc', 'src/main.ts', '--outFile', 'bin/script.js'])
+        if os.name == 'nt':
+            os.system("node node_modules/typescript/lib/tsc.js src/main.ts --outFile bin/script.js")
+        else:
+            subprocess.run(['node_modules/typescript/bin/tsc', 'src/main.ts', '--outFile', 'bin/script.js'])
         time.sleep(0.05)
 #Build the files
 threading.Thread(target = continuous_build).start()
