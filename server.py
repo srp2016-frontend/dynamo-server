@@ -13,7 +13,6 @@ build = True
 #A function to build the TS files in a loop 
 def continuous_build():
     while build:
-        subprocess.run(['node_modules/typescript/bin/tsc', 'src/main.ts', '--outFile', 'bin/script.js'])
         if os.name == 'nt':
             os.system("node node_modules/typescript/lib/tsc.js src/main.ts --outFile bin/script.js")
         else:
