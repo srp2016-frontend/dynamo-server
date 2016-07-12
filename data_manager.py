@@ -6,4 +6,7 @@ class DataManager(object):
             contents = test.read()
         self.values = json.loads(contents)
     def get(self, frame):
-        return self.values[frame]
+        if frame < len(self.values):
+            return self.values[frame]
+        else:
+            return "null"
