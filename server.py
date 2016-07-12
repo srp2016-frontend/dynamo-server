@@ -1,3 +1,5 @@
+import os
+os.chdir("dynamo-website")
 import http.server
 import socketserver
 
