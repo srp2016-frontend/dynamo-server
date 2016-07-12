@@ -5,5 +5,5 @@ class DataManager(object):
         with open("test_data", "r") as test:
             contents = test.read()
         self.values = json.loads(contents)
-    def next(self):
-        return self.values.pop(0) 
+    def get(self, frame):
+        return self.values[frame]
