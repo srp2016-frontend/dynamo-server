@@ -1,7 +1,11 @@
 import os
-os.chdir("dynamo-website")
 import http.server
 import socketserver
+import subprocess
+os.chdir("dynamo-website")
+
+#Build the files
+subprocess.Popen('while : ; do ./build.sh ; done', shell = True)
 
 PORT = 8000
 
