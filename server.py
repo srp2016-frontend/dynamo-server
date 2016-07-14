@@ -18,12 +18,22 @@ def continuous_build():
         else:
             subprocess.run(['node_modules/typescript/bin/tsc', 'src/main.ts', '--outFile', 'bin/script.js'])
         time.sleep(0.05)
+
 #Build the files
 threading.Thread(target = continuous_build).start()
 
 PORT = 8000
 
 httpd = socketserver.TCPServer(("", PORT), Handler)
+#A thread for user input commands
+def commands():
+    global build
+    while build:
+        user = input()
+        if user == "quit":
+            httpd.shutdown()
+            build = False
+threading.Thread(target = commands).start()
 
 print("serving at port", PORT)
 try:
