@@ -7,8 +7,9 @@ import time
 from request_handler import Handler
 os.chdir("dynamo-website")
 
+
 if not os.path.exists("node_modules"):
-    subprocess.run(["npm install"])
+    os.system("npm install")
 build = True
 #A function to build the TS files in a loop 
 def continuous_build():
