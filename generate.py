@@ -20,7 +20,10 @@ for j in range(20):
     for i in range(len(people)):
         person = people[i]
         x,y = positions[i][j]
-        string += "new Item(" + str(x) + ", " + str(y) + ", '" + people[i] + "', 18, '" + random.choice(nations) + "', 'athlete'),"
+        country = random.choice(nations)
+        while country.strip() == "":
+            random.choice(nations)
+        string += "new Item(" + str(x) + ", " + str(y) + ", '" + people[i] + "', 18, '" + country + "', 'athlete'),"
     string += "]\","
 string += "]"
 print(string)
