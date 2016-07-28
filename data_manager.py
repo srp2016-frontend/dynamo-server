@@ -10,10 +10,12 @@ class DataManager(object):
         for frame in self.values:
             for item in frame:
                 item.setdefault('name', 'John Doe')
+                item['id'] = item['name']
                 item.setdefault('x', 0)
                 item.setdefault('y', 0)
-                item.setdefault('type', 'object')
-                item.setdefault('affiliation', 'unknown')
+                item.setdefault('type', 'Object')
+                item.setdefault('affiliation', 'Unknown')
+                item.setdefault('age', 18)
     def get(self, frame):
         if frame < len(self.values):
             return self.values[frame]
