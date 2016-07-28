@@ -4,7 +4,10 @@ import socketserver
 import subprocess
 import threading
 import time
+import request_handler
 from request_handler import Handler
+import data_manager
+
 os.chdir("dynamo-website")
 
 
@@ -18,6 +21,7 @@ def continuous_build():
             os.system("node node_modules/typescript/lib/tsc.js src/main.ts --outFile bin/script.js")
         else:
             subprocess.run(['node_modules/typescript/bin/tsc', 'src/main.ts', '--outFile', 'bin/script.js'])
+        print("Build completed")
         time.sleep(0.5)
 
 #Build the files
@@ -34,6 +38,8 @@ def commands():
         if user == "quit":
             httpd.shutdown()
             build = False
+        elif user == "reload":
+            request_handler.manager = data_manager.DataManager()
 threading.Thread(target = commands).start()
 
 print("serving at port", PORT)
