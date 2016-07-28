@@ -1,5 +1,6 @@
 from http.server import SimpleHTTPRequestHandler
 from data_manager import DataManager
+import json
 manager = DataManager()
 
 class Handler(SimpleHTTPRequestHandler):
@@ -7,7 +8,7 @@ class Handler(SimpleHTTPRequestHandler):
         length = int(self.headers['content-length'])
         data_string = self.rfile.read(length)
         frame = int(data_string)
-        response = manager.get(frame)
+        response = json.dumps(manager.get(frame))
         self.send_response(200)
         self.send_header('Content-type', 'text/html')
         self.send_header('Content-length',str(len(response)))
