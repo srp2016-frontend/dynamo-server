@@ -17,10 +17,11 @@ for file in files:
         x = line[0]
         y = line[1] + y_offset
         x *= 746 / 18
-        y *= 596 / 18
+        y *= 596 / 6
         if frame >= len(times):
             times.append([])
         times[frame].append({'name' : name, 'x' : x, 'y' : y, 'type' : affiliation, 'age' : age})
+        frame += 1
 connection = pymongo.MongoClient(ip, port)
 db = connection.dynamo
 collection = db['Shooter']
