@@ -11,7 +11,7 @@ for file in files:
     affiliation = input("Affiliation: ")
     age = int(input("Age: "))
     with open(file, 'r') as data:
-        info = json.load(data.read())
+        info = json.loads(data.read())
     frame = 0
     for line in info:
         x = line[0]
@@ -25,4 +25,4 @@ connection = pymongo.MongoClient(ip, port)
 db = connection.dynamo
 collection = db['Shooter']
 collection.remove({})
-collection.insert_one({'times' : frames, 'test_dataset' : True})
+collection.insert_one({'times' : times, 'test_dataset' : True})
