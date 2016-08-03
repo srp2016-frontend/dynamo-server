@@ -20,7 +20,7 @@ class DataManager(object):
                 item.setdefault('affiliation', 'Unknown')
                 item.setdefault('age', 18)
     def get(self, dataset, frame):
-        if frame < len(self.values):
+        if frame < len(self.values[dataset]):
             return self.values[dataset][frame]
         else:
             return "null"
