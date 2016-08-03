@@ -14,7 +14,7 @@ for file in in_files:
         if line.strip() == "":
             continue
         items = line.split(" ")
-        x = float(items[0]) + x_offset
+        x = 6 - float(items[0]) + x_offset
         y = float(items[1])
         time = int(items[2]) - start_time + total_time
         info.append([x, y, time])
