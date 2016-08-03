@@ -26,6 +26,6 @@ for filename in files:
         frames[index].append({'name' : name, 'x' : x, 'y' : y, 'type' : 'Athlete', 'affiliation' : country, 'age' : age})
 connection = pymongo.MongoClient(ip, port)
 db = connection.dynamo
-collection = db.test
+collection = db['Triathlon']
 collection.remove({})
 collection.insert_one({'times' : frames, 'test_dataset' : True})
