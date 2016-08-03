@@ -6,11 +6,11 @@ class DataManager(object):
         connection = pymongo.MongoClient(ip, port)
         db = connection.dynamo
         self.values = {}
-        self.load("Triathlon")
-    def load(self, dataset):
+        self.load("Triathlon", db)
+    def load(self, dataset, db):
         collection = db[dataset]
         self.values[dataset] = collection.find_one()['times']
-        for frame in self.values['dataset']:
+        for frame in self.values[dataset]:
             for item in frame:
                 item.setdefault('name', 'John Doe')
                 item['id'] = item['name']
