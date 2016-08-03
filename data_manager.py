@@ -4,15 +4,14 @@ port = 27017
 class DataManager(object):
     def __init__(self):
         connection = pymongo.MongoClient(ip, port)
-        db = connection.dynamo
-        self.values = {}
-        self.load("Triathlon", db)
-        self.load("Shooter", db)
-    def load(self, dataset, db):
-        collection = db[dataset]
-        self.values[dataset] = collection.find_one()['times']
-        for frame in self.values[dataset]:
-            for item in frame:
+        self.db = connection.dynamo
+        self.values = {}            
+    def get(self, dataset, frame):
+        collection = self.db[dataset]
+        values = collection.find_one()['times']
+        if frame < len(values):
+            items = values[frame]
+            for item in items:
                 item.setdefault('name', 'John Doe')
                 item['id'] = item['name']
                 item.setdefault('x', 0)
@@ -20,8 +19,6 @@ class DataManager(object):
                 item.setdefault('type', 'Object')
                 item.setdefault('affiliation', 'Unknown')
                 item.setdefault('age', 18)
-    def get(self, dataset, frame):
-        if frame < len(self.values[dataset]):
-            return self.values[dataset][frame]
+            return items
         else:
             return "null"
