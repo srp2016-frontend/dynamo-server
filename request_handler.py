@@ -6,7 +6,8 @@ manager = DataManager()
 class Handler(SimpleHTTPRequestHandler):
     def do_POST(self):
         length = int(self.headers['content-length'])
-        data_string = self.rfile.read(length).split(":")
+        data_string = str(self.rfile.read(length))[2:-1].split(":")
+        print(data_string)
         dataset = data_string[0]
         frame = int(data_string[1])
         response = json.dumps(manager.get(dataset, frame))
