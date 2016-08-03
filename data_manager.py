@@ -7,6 +7,7 @@ class DataManager(object):
         db = connection.dynamo
         self.values = {}
         self.load("Triathlon", db)
+        self.load("Shooter", db)
     def load(self, dataset, db):
         collection = db[dataset]
         self.values[dataset] = collection.find_one()['times']
