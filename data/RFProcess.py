@@ -8,6 +8,7 @@ y_offset = (len(files) - 1) * 6
 times = []
 for file in files:
     name = input("Name: ")
+    type = input("Type: ")
     affiliation = input("Affiliation: ")
     age = int(input("Age: "))
     with open(file, 'r') as data:
@@ -20,7 +21,7 @@ for file in files:
         y *= 596 / 6
         if frame >= len(times):
             times.append([])
-        times[frame].append({'name' : name, 'x' : x, 'y' : y, 'type' : affiliation, 'age' : age})
+        times[frame].append({'name' : name, 'x' : x, 'y' : y, 'type' : type, 'affiliation' : affiliation, 'age' : age})
         frame += 1
 connection = pymongo.MongoClient(ip, port)
 db = connection.dynamo
