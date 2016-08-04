@@ -60,7 +60,7 @@ Point 10 Black: 40.280432, -74.005918
 END
 Kevin Destefano
 Chief Waterblaster 
-Fire 
+Fire
 18
 Point 1 Red: 40.280164, -74.006935
 Point 2 Orange: 40.280156, -74.006656
