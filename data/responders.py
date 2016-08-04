@@ -8,6 +8,9 @@ responder = ""
 type = ""
 affiliation = ""
 age = 0
+frame = -1
+prevx = -1
+prevy = -1
 for line in contents.split("\n"):
     if responder == "":
         responder = line
@@ -22,12 +25,20 @@ for line in contents.split("\n"):
         type = ""
         affiliation = ""
         age = 0
+        frame = -1
     else:
         segments = line.replace(',', '').split(' ')
-        frame = int(segments[1]) - 1
+        if prevx != -1 and prevy != -1:
+            frame += 1
+            if frame >= len(frames):
+                frames.append([])
+            frames[frame].append({"name" : responder, "x" : (float(segments[3]) + prevx) / 2, "y" : (float(segments[4]) + prevy) / 2, "type" : type, "affiliation" : affiliation})
+        frame += 1
         if frame >= len(frames):
             frames.append([])
         frames[frame].append({"name" : responder, "x" : float(segments[3]), "y" : float(segments[4]), "type" : type, "affiliation" : affiliation})
+        prevx = float(segments[3])
+        prevy = float(segments[4])
 minx = frames[0][0]["x"]
 miny = frames[0][0]["y"]
 maxx = minx
