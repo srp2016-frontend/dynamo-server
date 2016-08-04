@@ -10,6 +10,9 @@ for file in in_files:
         contents = data.read()
     lines = contents.split("\n")
     start_time = int(lines[0].split(" ")[2])
+    xprev = -1
+    yprev = -1
+    timeprev = -1
     for line in lines:
         if line.strip() == "":
             continue
@@ -17,6 +20,14 @@ for file in in_files:
         x = 6 - float(items[0]) + x_offset
         y = float(items[1])
         time = int(items[2]) - start_time + total_time
+        if xprev != -1 and yprev != -1 and timeprev != -1:
+            midx = (x + xprev) / 2
+            midy = (y + yprev) / 2
+            midtime = (time + timeprev) / 2
+            info.append([midx, midy, midtime])
+            xprev = x
+            yprev = y
+            timeprev = -1
         info.append([x, y, time])
     total_time = int(lines[-2].split(" ")[2]) - start_time + total_time
     x_offset -= 6
