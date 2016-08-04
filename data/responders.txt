@@ -1,0 +1,90 @@
+Brandon Guglielmo
+Medic
+Medical
+21
+Point 1 Red: 40.280880, -74.006645
+Point 2 Orange: 40.280900, -74.006535
+Point 3 Yellow: 40.280916, -74.006404
+Point 4 Green: 40.280890, -74.006315
+Point 5 Blue: 40.280861, -74.006261
+Point 6 Teal: 40.280800, -74.006210
+Point 7 Purple: 40.280718, -74.006130
+Point 8 Pink: 40.280669, -74.006068
+Point 9 White: 40.280583, -74.006068
+Point 10 Black: 40.280575, -74.006181
+END
+Brian DeLeonardis
+Firefighter
+Fire
+18
+Point 1 Red: 40.280959, -74.005803
+Point 2 Orange: 40.280951, -74.005889
+Point 3 Yellow: 40.280933, -74.006119
+Point 4 Green: 40.280855, -74.006103
+Point 5 Blue: 40.280792, -74.005972
+Point 6 Teal: 40.280695, -74.005958
+Point 7 Purple: 40.280634, -74.005948
+Point 8 Pink: 40.280577, -74.006031
+Point 9 White: 40.280485, -74.006058
+Point 10 Black: 40.280386, -74.006130
+END
+Ryan Goldstein
+Medic
+Medical
+17
+Point 1 Red: 40.280998, -74.005280
+Point 2 Orange: 40.280935, -74.005398
+Point 3 Yellow: 40.280894, -74.005481
+Point 4 Green: 40.280849, -74.005564
+Point 5 Blue: 40.280775, -74.005690
+Point 6 Teal: 40.280681, -74.005838
+Point 7 Purple: 40.280628, -74.005948
+Point 8 Pink: 40.280521, -74.005932
+Point 9 White: 40.280272, -74.006007
+Point 10 Black: 40.280307, -74.006151
+END
+Jack Dates
+Firefighter 
+Fire
+18
+Point 1 Red: 40.280998, -74.005280
+Point 2 Orange: 40.280955, -74.005289
+Point 3 Yellow: 40.280885, -74.005336
+Point 4 Green: 40.280790, -74.005386
+Point 5 Blue: 40.280621, -74.005488
+Point 6 Teal: 40.280506, -74.005573
+Point 7 Purple: 40.280681, -74.005838
+Point 8 Pink: 40.280687, -74.005954
+Point 9 White: 40.280547, -74.005934
+Point 10 Black: 40.280432, -74.005918
+END
+Kevin Destefano
+Chief Waterblaster 
+Fire 
+18
+Point 1 Red: 40.280164, -74.006935
+Point 2 Orange: 40.280156, -74.006656
+Point 3 Yellow: 40.280186, -74.006345
+Point 4 Green: 40.280168, -74.006138
+Point 5 Blue: 40.280186, -74.005881
+Point 6 Teal: 40.280405, -74.005915
+Point 7 Purple: 40.280712, -74.005958
+Point 8 Pink: 40.280792, -74.005966
+Point 9 White: 40.280866, -74.006103
+Point 10 Black: 40.280884, -74.006320
+END
+Matthew Kumar
+Officer
+Police
+18
+Point 1 Red: 40.280248, -74.005130
+Point 2 Orange: 40.280166, -74.005390
+Point 3 Yellow: 40.280086, -74.005838
+Point 4 Green: 40.280321, -74.005907
+Point 5 Blue: 40.280692, -74.005832
+Point 6 Teal: 40.280952, -74.005889
+Point 7 Purple: 40.280933, -74.006125
+Point 8 Pink: 40.280886, -74.006650
+Point 9 White: 40.280710, -74.006742
+Point 10 Black: 40.280501, -74.006742
+END
