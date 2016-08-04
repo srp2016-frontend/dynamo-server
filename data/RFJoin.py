@@ -21,13 +21,14 @@ for file in in_files:
         y = float(items[1])
         time = int(items[2]) - start_time + total_time
         if xprev != -1 and yprev != -1 and timeprev != -1:
-            midx = (x + xprev) / 2
-            midy = (y + yprev) / 2
-            midtime = (time + timeprev) / 2
-            info.append([midx, midy, midtime])
-            xprev = x
-            yprev = y
-            timeprev = -1
+            for i in range(1, 3):
+                midx = (x + xprev) * i / 4
+                midy = (y + yprev) * i / 4
+                midtime = (time + timeprev) * i / 4
+                info.append([midx, midy, midtime])
+        xprev = x
+        yprev = y
+        timeprev = time
         info.append([x, y, time])
     total_time = int(lines[-2].split(" ")[2]) - start_time + total_time
     x_offset -= 6
