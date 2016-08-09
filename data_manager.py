@@ -12,8 +12,8 @@ class DataManager(object):
         if dataset == 'Shooter':
             switch_point = len(values)
             values += collection.find_one()['times_in']
-        if frame == switch_point:
-            return "function comm_action() { console.log('switch'); }"
+            if frame == switch_point:
+                return "console.log('switch');"
         if frame < len(values):
             items = values[frame]
             for item in items:
