@@ -13,7 +13,7 @@ class DataManager(object):
             switch_point = len(values)
             values += collection.find_one()['times_in']
         if frame == switch_point:
-            return "function() { console.log('switch'); }"
+            return "function comm_action() { console.log('switch'); }"
         if frame < len(values):
             items = values[frame]
             for item in items:
