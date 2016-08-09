@@ -1,4 +1,4 @@
-Bevan Docherty
+Bevan Dockerty
 Country:New Zealand
 Age:39
 Name: Bevan Docherty X: 446.59705 Y: 451.81653 Time: 5

@@ -1,5 +1,5 @@
 Alistair Brownlee
-Country:Great Britain
+Country:England
 Age:28
 Name: Alistair Brownlee X: 445.44666 Y: 451.83002 Time: 5
 Name: Alistair Brownlee X: 456.49298 Y: 451.70007 Time: 10
