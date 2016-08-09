@@ -10,7 +10,10 @@ class DataManager(object):
         collection = self.db[dataset]
         values = collection.find_one()['times']
         if dataset == 'Shooter':
+            switch_point = len(values)
             values += collection.find_one()['times_in']
+        if frame == switch_point:
+            return "function() { console.log('switch'); }"
         if frame < len(values):
             items = values[frame]
             for item in items:
