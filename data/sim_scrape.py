@@ -24,6 +24,7 @@ for filename in files:
         while index >= len(frames):
             frames.append([])
         frames[index].append({'name' : name, 'x' : x, 'y' : y, 'type' : 'Athlete', 'affiliation' : country, 'age' : age})
+print(frames)
 connection = pymongo.MongoClient(ip, port)
 db = connection.dynamo
 collection = db['Triathlon']
