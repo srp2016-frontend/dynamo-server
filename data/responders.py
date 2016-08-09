@@ -60,10 +60,13 @@ for frame in frames:
     for responder in frame:
         responder["x"] -= minx 
         responder["y"] -= miny
-        responder["x"] *= 746 / width
+        responder["x"] *= 546 / width
+        responder["x"] += 200
         responder["y"] *= 596 / height
 connection = pymongo.MongoClient(ip, port)
 db = connection.dynamo
 collection = db['Shooter']
+current = collection.find_one()
 collection.remove({})
-collection.insert_one({'times' : frames, 'test_dataset' : True})
+current['times'] = frames
+collection.insert_one(current)

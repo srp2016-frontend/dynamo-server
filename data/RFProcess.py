@@ -26,5 +26,7 @@ for file in files:
 connection = pymongo.MongoClient(ip, port)
 db = connection.dynamo
 collection = db['Shooter']
+current = collection.find_one()
 collection.remove({})
-collection.insert_one({'times' : times, 'test_dataset' : True})
+current['times_in'] = times
+collection.insert_one(current)

@@ -9,6 +9,8 @@ class DataManager(object):
     def get(self, dataset, frame):
         collection = self.db[dataset]
         values = collection.find_one()['times']
+        if dataset == 'Shooter':
+            values += collection.find_one()['times_in']
         if frame < len(values):
             items = values[frame]
             for item in items:
