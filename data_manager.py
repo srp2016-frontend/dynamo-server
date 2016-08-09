@@ -13,6 +13,7 @@ class DataManager(object):
             switch_point = len(values)
             values += collection.find_one()['times_in']
             if frame == switch_point:
+                print("Sent switch")
                 return "console.log('switch');"
         if frame < len(values):
             items = values[frame]
