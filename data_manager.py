@@ -14,7 +14,7 @@ class DataManager(object):
             values += collection.find_one()['times_in']
             if frame == switch_point:
                 print("Sent switch")
-                return "console.log('switch');"
+                return "$('body').css('visibility', 'hidden')"
         if frame < len(values):
             items = values[frame]
             for item in items:
