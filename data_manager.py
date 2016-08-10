@@ -23,4 +23,4 @@ class DataManager(object):
                 item.setdefault('age', 18)
             return items
         else:
-            return "null"
+            return []

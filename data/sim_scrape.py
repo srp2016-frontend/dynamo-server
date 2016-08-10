@@ -1,6 +1,6 @@
 import sys
 import pymongo
-ip = '10.11.12.73'
+ip = 'localhost'
 port = 27017
 
 files = sys.argv[1:]

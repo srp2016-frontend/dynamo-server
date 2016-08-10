@@ -1,6 +1,6 @@
 import sys
 import json
-in_files = sys.argv[1:-1]
+in_files = sys.argv[1:-2]
 info = []
 start_time = 32636
 total_time = 0
@@ -31,5 +31,10 @@ for file in in_files:
         info.append([x, y, time])
     total_time = int(lines[-2].split(" ")[2]) - start_time + total_time
     x_offset -= 6
+with open(sys.argv[-2], 'w') as out:
+    out.write(json.dumps(info))
+info = info[1:]
+for frame in info:
+    frame[1] = 6 - frame[1]
 with open(sys.argv[-1], 'w') as out:
     out.write(json.dumps(info))

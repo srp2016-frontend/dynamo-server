@@ -1,5 +1,5 @@
 import pymongo
-ip = '10.11.12.73'
+ip = 'localhost'
 port = 27017
 with open("responders.txt", "r") as datafile:
     contents = datafile.read()
